@@ -1,24 +1,15 @@
 import React from 'react';
+import { ComponentStory, ComponentMeta } from '@storybook/react';
+import Header from '../components/Layout/Header';
 
-import { Header } from './Header';
 
 export default {
-  title: 'Example/Header',
+  /* 👇 The title prop is optional.
+  * See https://storybook.js.org/docs/react/configure/overview#configure-story-loading
+  * to learn how to generate automatic titles
+  */
+  title: 'Header',
   component: Header,
-  parameters: {
-    // More on Story layout: https://storybook.js.org/docs/react/configure/story-layout
-    layout: 'fullscreen',
-  },
 };
 
-const Template = (args) => <Header {...args} />;
-
-export const LoggedIn = Template.bind({});
-LoggedIn.args = {
-  user: {
-    name: 'Jane Doe',
-  },
-};
-
-export const LoggedOut = Template.bind({});
-LoggedOut.args = {};
+export const Primary = () => <Header primary>Header</Header>;
